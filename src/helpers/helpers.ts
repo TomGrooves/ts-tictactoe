@@ -3,7 +3,18 @@ export const createStringArray = (value: number) => {
     return arr
 }
 
-export const winConditions = [
+export const checkWin = (arrToCheck: Array<string>) => {
+    for (let win of winConditions) {
+        if (
+            arrToCheck[win[0]] === arrToCheck[win[1]] &&
+            arrToCheck[win[1]] === arrToCheck[win[2]] &&
+            arrToCheck[win[0]] !== "") {
+            return true
+        }
+    }
+}
+
+const winConditions = [
 [0,1,2],
 [3,4,5],
 [6,7,8],
